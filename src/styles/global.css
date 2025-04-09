@@ -1,1 +1,15 @@
 @import "tailwindcss";
+
+/* En tu archivo CSS global si usas uno, o con @layer si es Tailwind puro */
+
+[data-scrolled="true"] {
+	@apply bg-[#001E65]/30 backdrop-blur-md shadow-md rounded-4xl max-w-6xl mx-auto px-6;
+}
+
+[data-scrolled="true"] ul {
+	@apply gap-6;
+}
+
+[data-scrolled="true"] #logo {
+	@apply scale-90;
+}

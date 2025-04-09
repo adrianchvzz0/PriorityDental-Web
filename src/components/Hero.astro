@@ -4,26 +4,49 @@ import ArrowRight from "../components/icons/ArrowRight.astro";
 ---
 
 <div
-    class="justify-between flex items-center h-[740px] w-full bg-radial-[at_60%_60%] from-[#A7D8F5] to-[#001E65] p-16"
+    id="home"
+    class="flex flex-col md:flex-row
+    justify-center
+     lg:justify-between items-center
+      min-h-[500px] md:h-[740px] w-full p-4 md:p-8 lg:p-16
+    rounded-b-2xl md:rounded-b-4xl custom-radial-bg"
 >
-    <div class="w-[600px] h-auto flex justify-center gap-x-4">
-        <PriorityDentalIcon class="text-[#001E65]" />
+    <div
+        class="w-full md:w-1/2 lg:w-[600px] h-auto flex justify-center gap-x-4 md:mb-8"
+    >
+        <PriorityDentalIcon
+            class="text-[#001E65] w-full max-w-[350px] md:max-w-full h-[350px] mt-20"
+        />
     </div>
-    <div class="text-white flex flex-col">
-        <h5 class="text-4xl font-medium">
+    <div
+        class="text-white flex flex-col items-center md:items-start mb-80 lg:mb-0"
+    >
+        <h5
+            class="text-2xl md:text-3xl lg:text-4xl font-medium text-center md:text-left"
+        >
             Donde tu <span class="text-[#001E65]">sonrisa</span> es
         </h5>
-        <h1 class="text-7xl font-bold">Nuestra Prioridad</h1>
+        <h1
+            class="text-4xl md:text-5xl lg:text-7xl font-bold text-center md:text-left"
+        >
+            Nuestra Prioridad
+        </h1>
         <a
+            class="group font-bold
+            bg-[#001E65] shadow-md shadow-black/30 text-white py-2 px-4 w-auto rounded-full mt-4 hover:scale-110 hover:bg-gradient-to-r from-[#A7D8F5] to-[#001E65] hover:text-white inline-flex items-center transition-all"
             href="https://wa.me/8187097029"
             target="_blank"
             rel="noopener noreferrer"
         >
-            <button
-                class="font-bold bg-[#001E65] text-white py-2 px-4 w-auto rounded-full mt-4 hover:scale-110 hover:bg-[#A7D8F5] hover:text-white transition-all"
-            >
-                Agendar una cita <ArrowRight class="inline" />
-            </button>
+            Agendar una cita <ArrowRight
+                class="inline ml-1 transition-transform duration-300 group-hover:translate-x-2"
+            />
         </a>
     </div>
 </div>
+
+<style>
+    .custom-radial-bg {
+        background: radial-gradient(circle at 60% 60%, #a7d8f5, #001e65);
+    }
+</style>

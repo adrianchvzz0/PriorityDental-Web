@@ -2,12 +2,41 @@
 import PriorityDentalIcon from "../components/icons/PriorityDental.astro";
 ---
 
-<div
-    class="fixed top-0 left-0 right-0 w-full flex items-center justify-between px-12"
+<header
+    id="header"
+    data-scrolled="false"
+    class="fixed top-0 left-0 right-0 w-full flex items-center justify-between px-4 sm:px-8 lg:px-12 transition-all duration-500 z-50"
 >
-    <PriorityDentalIcon class="size-20 text-white" />
+    <a href="#home">
+        <PriorityDentalIcon class="size-16 sm:size-20 lg:size-24 text-white" />
+    </a>
 
-    <ul class="flex gap-6 font-bold text-lg">
+    <!-- Hamburger Menu Button (visible on mobile) -->
+    <button
+        id="menuButton"
+        class="lg:hidden text-white p-2 focus:outline-none"
+        aria-label="Menú"
+    >
+        <svg
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+        >
+            <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+    </button>
+
+    <!-- Desktop Navigation -->
+    <ul
+        id="menu"
+        data-scrolled="false"
+        class="hidden lg:flex gap-4 xl:gap-8 font-bold text-md lg:text-lg transition-all duration-500"
+    >
         <li class="group relative">
             <a
                 href="#home"
@@ -69,4 +98,167 @@ import PriorityDentalIcon from "../components/icons/PriorityDental.astro";
             </div>
         </li>
     </ul>
+</header>
+
+<!-- Mobile Navigation -->
+<div
+    id="mobileMenu"
+    class="fixed top-0 right-0 h-[400px] w-0 rounded-l-4xl bg-black/50 backdrop-blur-md overflow-hidden transition-all duration-300 z-50"
+>
+    <div class="flex justify-end p-4">
+        <button id="closeMenuButton" class="text-white">
+            <svg
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+            >
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+    </div>
+    <ul class="flex flex-col gap-6 pt-10 font-bold text-lg px-4">
+        <li>
+            <a
+                href="#home"
+                class="text-white hover:text-[#A7D8F5] transition-all mobile-link"
+            >
+                Inicio
+            </a>
+        </li>
+        <li>
+            <a
+                href="#about"
+                class="text-white hover:text-[#A7D8F5] transition-all mobile-link"
+            >
+                Sobre mí
+            </a>
+        </li>
+        <li>
+            <a
+                href="#expedient"
+                class="text-white hover:text-[#A7D8F5] transition-all mobile-link"
+            >
+                Apertura de Expediente
+            </a>
+        </li>
+        <li>
+            <a
+                href="#treatments"
+                class="text-white hover:text-[#A7D8F5] transition-all mobile-link"
+            >
+                Tratamientos
+            </a>
+        </li>
+        <li>
+            <a
+                href="#contact"
+                class="text-white hover:text-[#A7D8F5] transition-all mobile-link"
+            >
+                Contacto
+            </a>
+        </li>
+    </ul>
 </div>
+
+<script>
+    // Scroll Event Handler
+    window.addEventListener("scroll", () => {
+        const header = document.getElementById("header");
+        const menu = document.getElementById("menu");
+
+        if (window.scrollY > 250) {
+            header?.classList.add(
+                "bg-[#001E65]/30",
+                "backdrop-blur-md",
+                "shadow-md",
+                "rounded-2xl",
+                "sm:rounded-3xl",
+                "lg:rounded-4xl",
+                "max-w-6xl",
+                "mx-auto",
+                "px-2",
+                "sm:px-4",
+                "lg:px-6",
+            );
+            header?.classList.remove("px-4", "sm:px-8", "lg:px-12");
+
+            // Modificamos solo el espaciado del menú, NO su visibilidad
+            if (menu) {
+                menu.classList.remove("gap-4", "xl:gap-8");
+                menu.classList.add("gap-2", "xl:gap-4");
+            }
+        } else {
+            header?.classList.remove(
+                "bg-[#001E65]/30",
+                "backdrop-blur-md",
+                "shadow-md",
+                "rounded-2xl",
+                "sm:rounded-3xl",
+                "lg:rounded-4xl",
+                "max-w-6xl",
+                "mx-auto",
+                "px-2",
+                "sm:px-4",
+                "lg:px-6",
+            );
+            header?.classList.add("px-4", "sm:px-8", "lg:px-12");
+
+            // Restauramos el espaciado original del menú, NO su visibilidad
+            if (menu) {
+                menu.classList.remove("gap-2", "xl:gap-4");
+                menu.classList.add("gap-4", "xl:gap-8");
+            }
+        }
+
+        header?.setAttribute(
+            "data-scrolled",
+            window.scrollY > 250 ? "true" : "false",
+        );
+    });
+
+    // Mobile Menu Handlers
+    document.addEventListener("DOMContentLoaded", () => {
+        const menuButton = document.getElementById("menuButton");
+        const closeMenuButton = document.getElementById("closeMenuButton");
+        const mobileMenu = document.getElementById("mobileMenu");
+        const mobileLinks = document.querySelectorAll(".mobile-link");
+
+        // Open mobile menu
+        menuButton?.addEventListener("click", () => {
+            mobileMenu?.classList.add("w-[300px]", "sm:w-80");
+            mobileMenu?.classList.remove("w-0");
+            document.body.style.overflow = "hidden"; // Prevent scrolling when menu is open
+        });
+
+        // Close mobile menu function
+        const closeMenu = () => {
+            mobileMenu?.classList.remove("w-[300px]", "sm:w-80");
+            mobileMenu?.classList.add("w-0");
+            document.body.style.overflow = ""; // Re-enable scrolling
+        };
+
+        // Close button event
+        closeMenuButton?.addEventListener("click", closeMenu);
+
+        // Close menu when clicking a link
+        mobileLinks.forEach((link) => {
+            link.addEventListener("click", closeMenu);
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener("click", (e) => {
+            if (
+                !mobileMenu?.contains(e.target as Node) &&
+                !(e.target as Element)?.closest("#menuButton") &&
+                mobileMenu?.classList.contains("w-full")
+            ) {
+                closeMenu();
+            }
+        });
+    });
+</script>
