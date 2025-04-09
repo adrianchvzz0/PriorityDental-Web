@@ -1,22 +1,40 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+---
+
 <!doctype html>
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
+		<title>
+			Priority Dental - Tu Cita Dental con la Odontóloga Cristina Abigail
+		</title>
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<meta name="description" content="Priority Dental - Citas" />
 	</head>
 	<body>
-		<slot />
+		<Header />
+		<main>
+			<slot />
+		</main>
+		<Footer />
 	</body>
 </html>
 
 <style>
-	html,
+	html {
+		font-family: "Poppins", sans-serif;
+	}
 	body {
 		margin: 0;
 		width: 100%;
 		height: 100%;
+
+		background-color: #fff;
+	}
+	main {
+		min-height: 100vh;
 	}
 </style>

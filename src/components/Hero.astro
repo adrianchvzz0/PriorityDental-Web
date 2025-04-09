@@ -1,0 +1,29 @@
+---
+import PriorityDentalIcon from "../components/icons/PriorityDental.astro";
+import ArrowRight from "../components/icons/ArrowRight.astro";
+---
+
+<div
+    class="justify-between flex items-center h-[740px] w-full bg-radial-[at_60%_60%] from-[#A7D8F5] to-[#001E65] p-16"
+>
+    <div class="w-[600px] h-auto flex justify-center gap-x-4">
+        <PriorityDentalIcon class="text-[#001E65]" />
+    </div>
+    <div class="text-white flex flex-col">
+        <h5 class="text-4xl font-medium">
+            Donde tu <span class="text-[#001E65]">sonrisa</span> es
+        </h5>
+        <h1 class="text-7xl font-bold">Nuestra Prioridad</h1>
+        <a
+            href="https://wa.me/8187097029"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            <button
+                class="font-bold bg-[#001E65] text-white py-2 px-4 w-auto rounded-full mt-4 hover:scale-110 hover:bg-[#A7D8F5] hover:text-white transition-all"
+            >
+                Agendar una cita <ArrowRight class="inline" />
+            </button>
+        </a>
+    </div>
+</div>
