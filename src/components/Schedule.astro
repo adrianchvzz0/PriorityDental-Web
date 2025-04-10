@@ -1,0 +1,31 @@
+---
+import ButtonCita from "../components/ButtonCita.astro";
+---
+
+<section
+    id="schedule"
+    class="bg-[#E5E5E5] h-[400px] w-full py-16 font-family: 'Poppins', sans-serif flex flex-row justify-between items-center"
+>
+    <div class="w-full flex flex-col justify-start items-start">
+        <h1 class="text-4xl font-bold text-[#001E65]">
+            ¿Qué esperas para agendar tu cita?
+        </h1>
+        <div class="text-left">
+            <p class="font-bold text-2xl text-black/80 mb-4">
+                Cuida tu sonrisa hoy y evita problemas mañana.
+            </p>
+            <p class="font-bold text-2xl text-black/80 mb-4">
+                ¡Agenda tu consulta y empieza tu camino hacia una salud bucal
+                impecable!
+            </p>
+        </div>
+        <ButtonCita />
+    </div>
+    <div class="flex justify-end items-end">
+        <img
+            src="/images/dentista1.webp"
+            alt="Dentista"
+            class="w-[200px] h-auto rounded-full"
+        />
+    </div>
+</section>
