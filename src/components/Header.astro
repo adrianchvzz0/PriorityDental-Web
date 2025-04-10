@@ -2,13 +2,33 @@
 import PriorityDentalIcon from "../components/icons/PriorityDental.astro";
 ---
 
+<style>
+    @keyframes slideDown {
+        0% {
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+        100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    .slide-down1 {
+        animation: slideDown 1s ease-in-out;
+    }
+</style>
+
 <header
     id="header"
     data-scrolled="false"
-    class="fixed top-0 left-0 right-0 w-full flex items-center justify-between px-4 sm:px-8 lg:px-12 transition-all duration-500 z-50"
+    class="fixed top-2 left-0 right-0 w-full flex items-center justify-between px-4 sm:px-8 lg:px-12 transition-all duration-500 z-50 slide-down1"
 >
     <a href="#home">
-        <PriorityDentalIcon class="size-16 sm:size-16 lg:size-24 text-white" />
+        <PriorityDentalIcon
+            class="size-16 sm:size-16 lg:size-18 text-white"
+            title="Priority Dental"
+        />
     </a>
 
     <!-- Hamburger Menu Button (visible on mobile) -->

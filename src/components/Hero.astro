@@ -3,6 +3,38 @@ import PriorityDentalIcon from "../components/icons/PriorityDental.astro";
 import ArrowRight from "../components/icons/ArrowRight.astro";
 ---
 
+<style>
+    @keyframes slideIn {
+        0% {
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+        100% {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes slideRight {
+        0% {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+        100% {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+    .slide-in {
+        animation: slideIn 1.5s ease-in-out;
+    }
+
+    .slide-right1 {
+        animation: slideRight 1.5s ease-in-out;
+    }
+</style>
+
 <div
     id="home"
     class="flex flex-col md:flex-row
@@ -12,7 +44,7 @@ import ArrowRight from "../components/icons/ArrowRight.astro";
     rounded-b-2xl md:rounded-b-4xl custom-radial-bg"
 >
     <div
-        class="w-full md:w-1/2 lg:w-[600px] h-auto flex justify-center gap-x-4 md:mb-8"
+        class="w-full md:w-1/2 lg:w-[600px] h-auto flex justify-center gap-x-4 md:mb-8 slide-in"
     >
         <PriorityDentalIcon
             class="text-[#001E65] w-full max-w-[350px] md:max-w-full h-[350px] mt-20"
@@ -22,18 +54,18 @@ import ArrowRight from "../components/icons/ArrowRight.astro";
         class="text-white flex flex-col items-center md:items-start mb-80 lg:mb-0"
     >
         <h5
-            class="text-2xl md:text-3xl lg:text-4xl font-medium text-center md:text-left"
+            class="text-2xl md:text-3xl lg:text-4xl font-medium text-center md:text-left slide-right1"
         >
             Donde tu <span class="text-[#001E65]">sonrisa</span> es
         </h5>
         <h1
-            class="text-4xl md:text-5xl lg:text-7xl font-bold text-center md:text-left"
+            class="text-4xl md:text-5xl lg:text-7xl font-bold text-center md:text-left slide-right1"
         >
             Nuestra Prioridad
         </h1>
         <a
             class="group font-bold
-            bg-[#001E65] shadow-md shadow-black/30 text-white py-2 px-4 w-auto rounded-full mt-4 hover:scale-110 hover:bg-gradient-to-r from-[#A7D8F5] to-[#001E65] hover:text-white inline-flex items-center transition-all"
+            bg-[#001E65] shadow-md shadow-black/30 text-white py-2 px-4 w-auto rounded-full mt-4 hover:scale-110 hover:bg-gradient-to-r from-[#A7D8F5] to-[#001E65] hover:text-white inline-flex items-center transition-all slide-right1"
             href="https://wa.me/8187097029"
             target="_blank"
             rel="noopener noreferrer"
