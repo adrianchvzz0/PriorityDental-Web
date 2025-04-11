@@ -105,3 +105,13 @@
 	opacity: 1;
 	transform: translateY(0);
 }
+
+#treatments {
+	scroll-margin-top: 40px;
+	/* Ajusta este valor según la altura de tu header */
+}
+
+#about {
+	scroll-margin-top: 40px;
+	/* Ajusta este valor según la altura de tu header */
+}
