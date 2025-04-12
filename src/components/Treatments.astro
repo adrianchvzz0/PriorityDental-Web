@@ -10,47 +10,36 @@ import Card from "../components/Card.astro";
     <div
         class="w-full flex flex-col lg:flex-row justify-center items-center gap-8 py-16 lg:py-0"
     >
-        <div
-            class="group hover:scale-105 transform-gpu duration-300 ease-in-out transition-all"
-        >
-            <Card className="slide-in">
-                <img
-                    src="/images/limpieza-dental.webp"
-                    alt="Limpieza Dental"
-                    class="w-full rounded-t-4xl md:h-[230px] md:w-auto"
-                />
-                <h3
-                    class="text-xl font-bold text-[#001E65] mb-4 mt-4 text-center"
-                >
-                    Limpieza Dental
-                </h3>
-                <p class="text-lg text-black mb-4 text-pretty px-4">
-                    Elimina placa, sarro y manchas para mantener una sonrisa
-                    sana y prevenir enfermedades bucales. Ideal como cuidado
-                    regular cada 6 meses.
-                </p>
-            </Card>
-        </div>
-        <div
-            class="group hover:scale-105 transform-gpu duration-300 ease-in-out transition-all"
-        >
-            <Card className="slide-right">
-                <img
-                    src="/images/selladores-dentales.webp"
-                    alt="Selladores"
-                    class="w-full rounded-t-4xl lg:h-[230px]"
-                />
-                <h3
-                    class="text-xl font-bold text-[#001E65] mb-4 mt-4 text-center"
-                >
-                    Aplicación de Selladores
-                </h3>
-                <p class="text-lg text-black mb-4 text-pretty px-4">
-                    Protección preventiva para dientes sanos. Se coloca una
-                    resina sobre molares y premolares para evitar la formación
-                    de caries en zonas difíciles de limpiar.
-                </p>
-            </Card>
-        </div>
+        <Card className="slide-up lg:slide-in">
+            <img
+                src="/images/limpieza-dental.webp"
+                alt="Limpieza Dental"
+                class="w-full rounded-t-4xl md:h-[230px] md:w-auto"
+            />
+            <h3 class="text-xl font-bold text-[#001E65] mb-4 mt-4 text-center">
+                Limpieza Dental
+            </h3>
+            <p class="text-lg text-black mb-4 text-pretty px-4">
+                Elimina placa, sarro y manchas para mantener una sonrisa sana y
+                prevenir enfermedades bucales. Ideal como cuidado regular cada 6
+                meses.
+            </p>
+        </Card>
+
+        <Card className="slide-up lg:slide-right">
+            <img
+                src="/images/selladores-dentales.webp"
+                alt="Selladores"
+                class="w-full rounded-t-4xl lg:h-[230px]"
+            />
+            <h3 class="text-xl font-bold text-[#001E65] mb-4 mt-4 text-center">
+                Aplicación de Selladores
+            </h3>
+            <p class="text-lg text-black mb-4 text-pretty px-4">
+                Protección preventiva para dientes sanos. Se coloca una resina
+                sobre molares y premolares para evitar la formación de caries en
+                zonas difíciles de limpiar.
+            </p>
+        </Card>
     </div>
 </Section>
